@@ -17,7 +17,6 @@ $(document).ready(function() {
     var question3 = $("input:radio[name=question3]:checked").val();
     var question4 = $("input:radio[name=question4]:checked").val();
     var question5 = $("input:radio[name=question5]:checked").val();
-    var question6 = $("input:radio[name=question6]:checked").val();
     var outcome = $(".outcome");
 
     if (name == "") {
@@ -100,7 +99,7 @@ $(document).ready(function() {
         interest_csharp++;
       }
 
-      var result = [interest_php, interest_css, interest_java, interest_ruby, interest_csharp]
+      var result = [interest_php, interest_css, interest_java, interest_ruby, interest_csharp];
       result.sort();
       console.log(result);
       var suggestion = result[4];
@@ -120,6 +119,7 @@ $(document).ready(function() {
       else if (interest_csharp === suggestion) {
         outcome.text("Based on your answers " + name + ", you should take the C#/.NET track.");
       }
-
+    }
+    
   });
 });
