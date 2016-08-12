@@ -1,6 +1,6 @@
 # _Track Suggester_
 
-#### _A comprehensive portfolio, 08/12/2016_
+#### _A curriculum track suggestion system, 08/12/2016_
 
 #### By _**Sam Peppard**_
 
