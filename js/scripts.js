@@ -19,7 +19,7 @@ $(document).ready(function() {
     var question5 = $("input:radio[name=question5]:checked").val();
     var outcome = $(".outcome");
 
-    if (name == "") {
+    if (name === "") {
       outcome.text("Please enter your name to recieve your results.");
     } else {
 
@@ -84,7 +84,7 @@ $(document).ready(function() {
 
       // question5
       if (question5 === "1") {
-        interest_css;
+        interest_css++;
       }
       else if (question5 === "2") {
         interest_php++;
@@ -120,6 +120,6 @@ $(document).ready(function() {
         outcome.text("Based on your answers " + name + ", you should take the C#/.NET track.");
       }
     }
-    
+
   });
 });

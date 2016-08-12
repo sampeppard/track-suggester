@@ -1,0 +1,9 @@
+
+form#survey {
+  width: 100%;
+  padding: 15px;
+  border: solid 5px #333;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
