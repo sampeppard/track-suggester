@@ -21,7 +21,11 @@ $(document).ready(function() {
 
     if (name === "") {
       outcome.text("Please enter your name to recieve your results.");
-    } else {
+    }
+    else if (question1 === undefined || question2 === undefined, question3 === undefined, question4 === undefined, question5 === undefined) {
+      outcome.text("Please answer all questions.");
+    }
+    else  {
 
       // question1
       if (question1 === "1") {
