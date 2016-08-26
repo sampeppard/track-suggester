@@ -104,7 +104,13 @@ $(document).ready(function() {
       }
 
       var result = [interestPhp, interestCss, interestJava, interestRuby, interestCsharp];
-      result.sort();
+      console.log(result);
+
+      var sortInterests = function(a,b) {
+        return a - b;
+      }
+
+      result.sort(sortInterests);
       console.log(result);
       var suggestion = result[4];
 
