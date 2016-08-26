@@ -106,13 +106,20 @@ $(document).ready(function() {
       var result = [interestPhp, interestCss, interestJava, interestRuby, interestCsharp];
       console.log(result);
 
-      var sortInterests = function(a,b) {
-        return a - b;
+      var suggestion = Math.max.apply(Math, result);
+
+      console.log(suggestion);
+
+
+      for (var i = 0; i < result.length; i++) {
+        var tiedInterests = [];
+        if (result[i] === suggestion) {
+          tiedInterests.push(result[i]);
+        }
+        tiedInterests.push(result[4]);
       }
 
-      result.sort(sortInterests);
-      console.log(result);
-      var suggestion = result[4];
+
 
       if (interestPhp === suggestion) {
         outcome.text("Based on your answers " + name + ", you should take the PHP/Drupal track.");
@@ -126,7 +133,7 @@ $(document).ready(function() {
       else if (interestRuby === suggestion) {
         outcome.text("Based on your answers " + name + ", you should take the Ruby/Rails track.");
       }
-      else if (interestCsharp === suggestion) {
+      else {
         outcome.text("Based on your answers " + name + ", you should take the C#/.NET track.");
       }
     }
