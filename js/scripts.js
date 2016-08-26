@@ -106,31 +106,30 @@ $(document).ready(function() {
       var result = [interestPhp, interestCss, interestJava, interestRuby, interestCsharp];
       console.log(result);
 
-      var suggestion = Math.max.apply(Math, result);
+      var suggestion1 = Math.max.apply(Math, result);
 
-      console.log(suggestion);
-
-
+      // logic for tied values /////////////////////
       for (var i = 0; i < result.length; i++) {
-        var tiedInterests = [];
-        if (result[i] === suggestion) {
-          tiedInterests.push(result[i]);
+        var tieBreaker = Math.floor(Math.random() * 29) + 1;
+        if (result[i] === suggestion1) {
+          result[i] += tieBreaker;
         }
-        tiedInterests.push(result[4]);
       }
 
+      var suggestion2 = Math.max.apply(Math, result);
+      // end logic for tied values /////////////////////
 
 
-      if (interestPhp === suggestion) {
+      if (result[0] === suggestion2) {
         outcome.text("Based on your answers " + name + ", you should take the PHP/Drupal track.");
       }
-      else if (interestCss === suggestion) {
+      else if (result[1] === suggestion2) {
         outcome.text("Based on your answers " + name + ", you should take the CSS/Design track.");
       }
-      else if (interestJava === suggestion) {
+      else if (result[2] === suggestion2) {
         outcome.text("Based on your answers " + name + ", you should take the Java/Android track.");
       }
-      else if (interestRuby === suggestion) {
+      else if (result[3] === suggestion2) {
         outcome.text("Based on your answers " + name + ", you should take the Ruby/Rails track.");
       }
       else {
